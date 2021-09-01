@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Java之路</title><meta name="author" content="周恒"><meta name="copyright" content="周恒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta property="og:type" content="website">
+<meta property="og:title" content="Java之路">
+<meta property="og:url" content="https://zhhades.cn/index.html">
+<meta property="og:site_name" content="Java之路">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zhhades.cn/images/zhhades.png">
+<meta property="article:author" content="周恒">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zhhades.cn/images/zhhades.png"><link rel="shortcut icon" href="/images/zhhades.png"><link rel="canonical" href="https://zhhades.cn/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-09-01 21:26:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/zhhades.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Java之路</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Java之路</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/zhhades" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zhhades1103@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/01/%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" title="【Mongodb】集群搭建的三种方式">【Mongodb】集群搭建的三种方式</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-01T13:01:13.388Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/MiddleWare/">MiddleWare</a></span></div><div class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Mongodb是时下流行的NoSql数据库，它的存储方式是文档式存储，并不是Key-Value形式。关于Mongodb的特点，这里就不多介绍了，大家可以去看看官方说明：http://docs.mongodb.org/manual/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今天主要来说说Mongodb的三种集群方式的搭建：Replica Set / Sharding / Master-Slaver。这里只说明最简单的集群搭建方式（生产环境），如果有多个节点可以此类推或者查看官方文档。OS是Ubuntu_x64系统，客户端用的是Java客户端。Mongodb版本是mongodb-linux-x86_64-2.2.2.tgz###Replica Set&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中文翻译叫做副本集，不过我并不喜欢把英文翻译成中文，总是感觉怪怪的。其实简单来说就是集群当中包含 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/01/%E9%9B%86%E7%BE%A4%E8%B0%83%E4%BC%98/" title="【Elasticsearch】集群调优">【Elasticsearch】集群调优</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-01T13:01:13.388Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/MiddleWare/">MiddleWare</a></span></div><div class="content">一、生成环境部署建议1、系统设置与官方保持一致官方文档资料：https://www.elastic.co/guide/en/elasticsearch/reference/7.x/setup.html
+2、ES设置尽量简洁elasticsearch.yml中尽量只写必备的参数，其他可以通过api动态设置的参数都通过api来设定文档 Setup Elasticsearch → Important Elasticsearch ConfigurationES版本升级较快，尽量跟随官方设置，不要copy他人的设置3、elasticsearch.yml中建议设定的基本参数cluster.namenode.namenode.master/node.data/node.ingestnetwork.host 建议显示指定为内网ip，不要偷懒设置为0.0.0.0discovery.zen.ping.unicast.hosts 设定集群其他节点地址discovery.zen.mininum_master_nodes 一般设定为2，master节点一般为3个path.data/path.log除上述参数外再 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/01/%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/" title="【Elasticsearch】分页查询实现方案">【Elasticsearch】分页查询实现方案</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-01T13:01:13.387Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/MiddleWare/">MiddleWare</a></span></div><div class="content">1. from+size 实现分页from表示从第几行开始，size表示查询多少条文档。from默认为0，size默认为10，注意：size的大小不能超过index.max_result_window这个参数的设置，默认为10,000。如果搜索size大于10000，需要设置index.max_result_window参数
+123456PUT _settings&#123;    &quot;index&quot;: &#123;        &quot;max_result_window&quot;: &quot;10000000&quot;    &#125;&#125;          
+
+内部执行原理：示例：有三个节点node1、node2、node3，每个节点上有2个shard分片
+
+
+
+node1
+node2
+node3
+
+
+
+shard1
+shard3
+shard5
+
+
+shard2
+shard4
+shard6
+
+
+123451.client发送分页查询请求到node1（coordinating node）上，node1建立一个大小为from+size的优先级队列来 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/01/%E7%83%AD%E6%B8%A9%E5%86%B7%E6%9E%B6%E6%9E%84%E5%88%9D%E6%8E%A2/" title="【Elasticsearch】热温冷架构初探">【Elasticsearch】热温冷架构初探</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-01T13:01:13.387Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/MiddleWare/">MiddleWare</a></span></div><div class="content">1、什么是热温冷架构？​     通俗解读：热节点存放用户最关心的热数据；温节点或者冷节点存放用户不太关心或者关心优先级低的暖数据或者冷数据。
+​     对于日志或指标（metric）类时序性强的ES索引，因为数据量大，并且写入和查询大多都是近期时间内的数据。我们可以采用hot-warm-cold架构将索引数据切分成hot/warm/cold的索引。
+​     如下是最简单的热温冷架构部署图，HOT，WARM，COLD是节点属性，HOT节点负责最新数据的读写，可使用内存或者SSD进行存储；WARM负责较旧的数据读取，可以使用SSD或者HDD进行存储；COLD节点负责最旧的数据读取(很少被读取)，可以采用HDD存储。
+
+2、实战冷热架构索引生命周期管理 (ILM) 是在 Elasticsearch 6.6（公测版）首次引入并在 6.7 版正式推出的一项功能。ILM 是 Elasticsearch 的一部分，主要用来管理索引。http://10.122.100.146:5601/app/kibana#/management?_g=()
+2.1 以docker-compose方式部署el ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/01/%E7%BA%BF%E4%B8%8A%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98%E5%AE%9A%E4%BD%8D/" title="【JAVA实战】记一次线上性能问题定位实战">【JAVA实战】记一次线上性能问题定位实战</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-01T13:01:13.387Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/JAVA/">JAVA</a></span></div><div class="content">0X00-问题现象：进入XX系统资源页面，XX管理页签数据无法显示，F12查看后端请求报错。
+0X01-定位过程：1、F12查看后端请求报错
+2、根据报错信息，判断XX服务可能存在问题，查看XX服务日志使用 jstat -gcutil  -pid 1000 20 每一秒打印一次gc信息，打印20次查看结果。发现FGC在频繁发生，差不多每5秒发生一次。FGC发生次数达到了3571次（运行8小时）
+3、通过导出dump使用MAT工具进行分析使用如下命令导出对应服务的dump文件
+sudo docker exec -it `sudo docker ps | grep xx | awk &#39;&#123;print $1&#125;&#39;` /bin/bash -c &quot;jmap -dump:format=b,file=xx.dump 6&quot;
+
+sudo docker cp `sudo docker ps | grep xx | awk &#39;&#123;print $1&#125;&#39;`:/opt/project/galaxy_device.dump
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/01/%E5%BB%BA%E6%A8%A1%E5%88%9D%E6%8E%A2/" title="【Elasticsearch】建模初探">【Elasticsearch】建模初探</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-01T13:01:13.387Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/MiddleWare/">MiddleWare</a></span></div><div class="content">一、ES中的数据建模ES是基于Lucence以倒排索引为基础的存储体系，不遵循关系型数据库中的范式约定。
+二、Mapping字段相关设置回顾
+enabled 仅存储，不做搜索或聚合分析
+true 
+false 
+
+
+index 是否构建倒排索引
+true
+false
+
+
+index_options 存储倒排索引的哪些信息
+docs 只有文档编号被索引。能够回答的问题只有此 term（词条）是否存在于此字段
+freqs 文档编号和 term（词条）的频率会被索引。term（词条）频率用于给搜索评分，重复出现的 term（词条）评分将高于单个出现的  term（词条）。
+positions 文档编号、term frequencies（词条频率）和 term（词条）位置（或顺序）将被索引。Position被用于 proximity queries （邻近查询）和 phrase queries（短语查询）。
+offsets 文档编号、term（词条）频率,位置,起始和结尾字符偏移量（用于映射该 term （词条）到原始字符串）将被索引。Offset用于postings highlighter。 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/01/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/" title="【设计模式】装饰器模式">【设计模式】装饰器模式</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-01T13:01:13.387Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></span></div><div class="content">1、定义在不改变原有对象的基础之上，将功能附加到对象上，提供了比继承更有弹性的替代方案，属于结构型设计模式。
+2、身边例子(反例写法)山东煎饼果子例子、装修例子、促销打折例子
+123456789101112131415package top.zhhades.design.decorator.v1; import lombok.ToString; import lombok.extern.slf4j.Slf4j; /** * @author zhhades */ @Slf4j public class Pancake &#123;         public String makeBy() &#123;         return &quot;面粉&quot;;        &#125;         public int cost() &#123;        return 5;        &#125; &#125; 
+
+
+
+123456789101112131415package top.zhhades.design.decorator.v1; import lombo ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/01/DSL%E4%BB%8B%E7%BB%8D/" title="【Elasticsearch】DSL语句介绍">【Elasticsearch】DSL语句介绍</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-01T13:01:13.386Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/MiddleWare/">MiddleWare</a></span></div><div class="content">1.Lucene评分影响因子
+文档权重（document boost）：索引期赋予某个文档的权重值
+字段权重（field boost）：查询期赋予某个字段的权重值
+协调因子（coord）：基于文档中词项个数的协调因子，一个文档命中了查询中的词项越多，得分越高
+逆文档频率（inverse document frequency）：一个基于词项的因子，告诉评分公式该词项有多么罕见。逆文档频率越高，词项就越罕见。评分公式利用该因子，为包含罕见词项的文档加权
+长度范数（length norm）：每字段的基于词项个数的归一化因子（在索引期被计算并存储在索引中）。一个字段包含的词项数越多，该因子的权重越低。这表示lucene评分公式更“喜欢”包含更少词项的字段
+词频（Term frequency）：一个基于词项的因子，用来表示一个词项在某个文档中出现了多少次。词频越高，得分越高
+查询范数（Query norm）：一个基于查询的归一化因子，等于查询中词项的权重平方和。查询范数使不同查询的得分能互相比较
+
+2.Elasticsearch默认评分公式 Elasticsearch 5.0版本以前默认评分公式 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/01/Ngrok%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/" title="【工具】Ngrok服务器搭建">【工具】Ngrok服务器搭建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-01T13:01:13.386Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">Ngrok是什么​        ngrok是一个内网穿透的解决方案：它使得你本地的服务器可以被局域网外的公网访问到，ngork有服务端和客户端，服务端运行在公网服务器，客户端运行在本地服务器
+Ngrok服务器搭建必备条件
+具有公网IP的服务器
+可进行解析配置的域名
+
+搭建步骤本文基于CentOS7的环境进行搭建，Ubuntu环境类似，本文不再赘述1. 安装git和go以及其它依赖1yum install gcc mercurial git bzr subversion golang golang-pkg-windows-amd64 golang-pkg-windows-386 -y
+
+2. 下载源码1git clone https://github.com/inconshreveable/ngrok.git
+
+3. 生成证书12345678cd ngrok#将xxxx.xxxx修改为你自己的域名export NGROK_DOMAIN=&quot;xxxx.xxxx&quot; openssl genrsa -out rootCA.key 2048openssl req -x509 - ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/01/SpringBoot%E9%9B%86%E6%88%90websocket/" title="【SpringBoot】SpringBoot集成websocket">【SpringBoot】SpringBoot集成websocket</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-01T13:01:13.386Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/SpringBoot/">SpringBoot</a></span></div><div class="content">SpringBoot集成websocket本次以代码实战的方式介绍SpringBoot集成websocket
+HandshakeInterceptor12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455/** * websocket握手拦截器 * @author zhouheng * @date 2021-04-20 18:17 */@Slf4j@Componentpublic class XXXHandshakeInterceptor implements HandshakeInterceptor &#123;	@Override	public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse serverHttpResponse,			WebSocketHandler webSocketHandler, Map&lt;String, Object ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/zhhades.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">周恒</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhhades"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zhhades" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zhhades1103@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/09/01/%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" title="【Mongodb】集群搭建的三种方式">【Mongodb】集群搭建的三种方式</a><time datetime="2021-09-01T13:01:13.388Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/09/01/%E9%9B%86%E7%BE%A4%E8%B0%83%E4%BC%98/" title="【Elasticsearch】集群调优">【Elasticsearch】集群调优</a><time datetime="2021-09-01T13:01:13.388Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/09/01/%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/" title="【Elasticsearch】分页查询实现方案">【Elasticsearch】分页查询实现方案</a><time datetime="2021-09-01T13:01:13.387Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/09/01/%E7%83%AD%E6%B8%A9%E5%86%B7%E6%9E%B6%E6%9E%84%E5%88%9D%E6%8E%A2/" title="【Elasticsearch】热温冷架构初探">【Elasticsearch】热温冷架构初探</a><time datetime="2021-09-01T13:01:13.387Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/09/01/%E7%BA%BF%E4%B8%8A%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98%E5%AE%9A%E4%BD%8D/" title="【JAVA实战】记一次线上性能问题定位实战">【JAVA实战】记一次线上性能问题定位实战</a><time datetime="2021-09-01T13:01:13.387Z" title="发表于 2021-09-01 21:01:13">2021-09-01</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JAVA/"><span class="card-category-list-name">JAVA</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/MiddleWare/"><span class="card-category-list-name">MiddleWare</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python/"><span class="card-category-list-name">Python</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SpringBoot/"><span class="card-category-list-name">SpringBoot</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><span class="card-category-list-name">设计模式</span><span class="card-category-list-count">1</span></a></li>
+            
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Elasticsearch/" style="font-size: 1.5em; color: #99a9bf">Elasticsearch</a> <a href="/tags/JAVA/" style="font-size: 1.1em; color: #999">JAVA</a> <a href="/tags/Mongodb/" style="font-size: 1.1em; color: #999">Mongodb</a> <a href="/tags/Ngrok/" style="font-size: 1.1em; color: #999">Ngrok</a> <a href="/tags/Python/" style="font-size: 1.1em; color: #999">Python</a> <a href="/tags/SpringBoot/" style="font-size: 1.1em; color: #999">SpringBoot</a> <a href="/tags/selenium/" style="font-size: 1.1em; color: #999">selenium</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">九月 2021</span><span class="card-archive-list-count">12</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">12</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-09-01T13:26:03.844Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 周恒</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (false) { 
+    var typed = new Typed("#subtitle", {
+      strings: "业精于勤荒于嬉 行成于思毁于随".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: false,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '业精于勤荒于嬉 行成于思毁于随'
+  }
+}
+
+if (false) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
